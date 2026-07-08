@@ -13,9 +13,7 @@
      para cache; se for uma navegação e nada estiver disponível,
      mostra a home guardada em cache (a pior situação é sempre
      "ver a home", nunca um ecrã em branco).
-   - Recursos de outras origens (jQuery CDN, Google Maps embed,
-     Overpass) não são geridos pelo Service Worker — seguem o
-     comportamento normal do browser.
+  
 =================================================================== */
 
 const CACHE_NAME = 'sos-local-v1';
