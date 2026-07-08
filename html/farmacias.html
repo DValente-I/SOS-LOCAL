@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Farmácias de plantão em Luanda — horários, moradas e contactos telefónicos. Farmácia Central, Talatona e Vida com funcionamento 24 horas.">
+    <link rel="icon" href="../img/icons/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="../img/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/apple-touch-icon.png">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#D62828">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SOS Local">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:title" content="SOS Local | Farmácias de Plantão">
+    <meta property="og:description" content="Farmácias de plantão em Luanda — horários, moradas e contactos telefónicos. Farmácia Central, Talatona e Vida com funcionamento 24 horas.">
+    <meta property="og:image" content="https://soslocal.ao/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://soslocal.ao/html/farmacias.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SOS Local | Farmácias de Plantão">
+    <meta name="twitter:description" content="Farmácias de plantão em Luanda — horários, moradas e contactos telefónicos. Farmácia Central, Talatona e Vida com funcionamento 24 horas.">
+    <meta name="twitter:image" content="https://soslocal.ao/img/og-image.png">
+    <link rel="canonical" href="https://soslocal.ao/html/farmacias.html">
+    <title>SOS Local | Farmácias de Plantão</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/detalhes.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/cookies.css">
+    <script>/* SOS LOCAL: anti-flash tema */
+    (function(){var t=localStorage.getItem('sos-tema')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'escuro':'claro');if(t==='escuro')document.documentElement.setAttribute('data-tema','escuro');}());
+    </script>
+</head>
+<body>
+    <header id="site-header">
+        <div class="logo"><strong>SOS</strong> LOCAL</div>
+        <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+        <nav id="top-navigation">
+            <ul>
+                <li><a href="../index.html">&#127968; Início</a></li>
+                <li><a href="servicos.html" class="nav-ativo">&#128680; Emergências</a></li>
+                <li><a href="ajuda.html">&#128218; Centro de Ajuda</a></li>
+                <li><a href="faq.html">&#10067; FAQ</a></li>
+                <li><a href="contato.html">&#128222; Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-container">
+        <section id="content-area">
+            <h1>Farmácias de Plantão</h1>
+            <p>Consulte farmácias em funcionamento e contacte diretamente antes de se deslocar, para confirmar disponibilidade e horário.</p>
+
+            <article class="service-detail-card">
+                <h2>Lista de Farmácias Disponíveis</h2>
+                <p>Verifique o horário e ligue antes de se deslocar para garantir o stock do medicamento.</p>
+
+                <p class="localizacao-lista-status" id="status-lista-farmacias" hidden></p>
+                <ul class="pharmacy-grid" id="lista-farmacias">
+                    <li class="pharmacy-card">
+                        <p class="pharmacy-status pharmacy-status--24h">Aberta 24h</p>
+                        <h3>Farmácia Central</h3>
+                        <address>
+                            <p class="pharmacy-info"><span class="pharmacy-info-icon" aria-hidden="true">📍</span> Rua Amílcar Cabral, 45, Luanda</p>
+                            <p class="pharmacy-info"><span class="pharmacy-info-icon" aria-hidden="true">☎</span> <a href="tel:+244954321456">954 321 456</a></p>
+                        </address>
+                        <p class="pharmacy-info"><span class="pharmacy-info-icon" aria-hidden="true">🕒</span> Funcionamento 24 horas, todos os dias</p>
+                        <a href="tel:+244954321456" class="btn-small pharmacy-call">📞 Ligar agora</a>
+                    </li>
+                    <li class="pharmacy-card">
+                        <p class="pharmacy-status pharmacy-status--24h">Aberta 24h</p>
+                        <h3>Farmácia Talatona</h3>
+                        <address>
+                            <p class="pharmacy-info"><span class="pharmacy-info-icon" aria-hidden="true">📍</span> Via S10, Condomínio Talatona, Luanda</p>
+                            <p class="pharmacy-info"><span class="pharmacy-info-icon" aria-hidden="true">☎</span> <a href="tel:+244978654345">978 654 345</a></p>
+                        </address>
+                        <p class="pharmacy-info"><span class="pharmacy-info-icon" aria-hidden="true">🕒</span> Funcionamento 24 horas, todos os dias</p>
+                        <a href="tel:+244978654345" class="btn-small pharmacy-call">📞 Ligar agora</a>
+                    </li>
+                    <li class="pharmacy-card">
+                        <p class="pharmacy-status pharmacy-status--limitado">Até às 22h</p>
+                        <h3>Farmácia Vida</h3>
+                        <address>
+                            <p class="pharmacy-info"><span class="pharmacy-info-icon" aria-hidden="true">📍</span> Avenida Deolinda Rodrigues, 120, Maianga, Luanda</p>
+                            <p class="pharmacy-info"><span class="pharmacy-info-icon" aria-hidden="true">☎</span> <a href="tel:+244987654321">987 654 321</a></p>
+                        </address>
+                        <p class="pharmacy-info"><span class="pharmacy-info-icon" aria-hidden="true">🕒</span> Segunda a domingo, 07h00 – 22h00</p>
+                        <a href="tel:+244987654321" class="btn-small pharmacy-call">📞 Ligar agora</a>
+                    </li>
+                </ul>
+                <p class="pharmacy-disclaimer">* Informações sujeitas a alteração. Ligue antes de se deslocar para confirmar horário e disponibilidade.</p>
+            </article>
+
+            <article class="service-detail-card">
+                <h2>Mapa de Farmácias</h2>
+                <div class="map-placeholder mapa-ativo" id="mapa-farmacias">
+                    <iframe
+                        src="https://www.google.com/maps?q=farm%C3%A1cias+em+Luanda%2C+Angola&output=embed"
+                        title="Mapa das farmácias de plantão em Luanda"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="map-caption">Mapa indicativo das farmácias de plantão em Luanda. Confirme disponibilidade por telefone antes de se deslocar.</p>
+                <button type="button" class="btn-localizacao" data-tipo="farmacia" data-mapa="mapa-farmacias" data-resultados="resultados-farmacias" data-lista="lista-farmacias" data-status-lista="status-lista-farmacias">📍 Minha localização</button>
+                <div class="localizacao-resultados" id="resultados-farmacias" hidden></div>
+            </article>
+        </section>
+    </main>
+
+    <footer id="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col"><h4>Institucional</h4><ul><li><a href="ajuda.html">Centro de Ajuda</a></li><li><a href="legal.html">Termos de Uso</a></li></ul></div>
+            <div class="footer-col"><h4>Serviços</h4><ul><li><a href="policia.html">Polícia</a></li><li><a href="saude.html">Saúde</a></li><li><a href="bombeiros.html">Bombeiros</a></li><li><a href="farmacias.html">Farmácias</a></li></ul></div>
+            <div class="footer-col"><h4>Suporte</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="mapa-site.html">Mapa do Site</a></li><li><a href="contato.html">Contactos</a></li></ul></div>
+            <div class="footer-col"><h4>Redes Sociais</h4><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 SOS Local — Segurança e Cidadania.</p></div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/voltar-topo.js"></script>
+    <script src="../js/dark-mode.js"></script>
+    <script src="../js/cookies.js"></script>
+    <script src="../js/localizacao.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('../sw.js').catch(function (erro) {
+                console.warn('SOS Local: falha ao registar o service worker.', erro);
+            });
+        });
+    }
+    </script>
+</body>
+</html>

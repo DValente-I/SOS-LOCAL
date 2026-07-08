@@ -1,0 +1,102 @@
+/* ===================================================================
+   SOS LOCAL — SERVIÇOS DE EMERGÊNCIA (servicos.html)
+   #content-area, h1 e botões já vêm de estilo.css.
+=================================================================== */
+
+/* Nota discreta para visitantes/turistas que desconhecem o sistema
+   de emergência angolano. Mesmo padrão visual de .legal-notice
+   (legal.css) e .visitor-notice (index.css). */
+.visitor-notice {
+    background: #f0f4f8;
+    border-left: 3px solid var(--cor-secundaria);
+    padding: 8px 12px;
+    border-radius: var(--raio-sm);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--cor-texto-suave);
+    margin-top: 24px;
+    margin-bottom: 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 8px;
+}
+
+/* Cores e ícone por serviço */
+.service-card[data-service="policia"]   { border-top: 5px solid #1D3557; }
+.service-card[data-service="saude"]     { border-top: 5px solid #2a9d8f; }
+.service-card[data-service="bombeiros"] { border-top: 5px solid #D62828; }
+.service-card[data-service="farmacias"] { border-top: 5px solid #6a0dad; }
+
+.service-card {
+    background: var(--cor-branca);
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-md);
+    text-decoration: none;
+    color: var(--cor-texto);
+    box-shadow: var(--sombra-sm);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-lg);
+}
+
+.service-card[data-service="policia"]:hover   { border-color: #1D3557; }
+.service-card[data-service="saude"]:hover     { border-color: #2a9d8f; }
+.service-card[data-service="bombeiros"]:hover { border-color: #D62828; }
+.service-card[data-service="farmacias"]:hover { border-color: #6a0dad; }
+
+.service-icon {
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.service-card h3 {
+    margin: 4px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+}
+
+.service-card .emergency-number {
+    display: block;
+    font-size: 2.4rem;
+    color: var(--cor-primaria);
+    font-weight: 800;
+    margin: 8px 0;
+}
+
+/* Farmácias não tem um número de emergência direto — tratamento
+   tipográfico mais discreto, consistente com index.css. */
+.service-card[data-service="farmacias"] .emergency-number {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #6a0dad;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    margin-top: 8px;
+    color: var(--cor-texto-suave);
+}
+
+@media (max-width: 992px) {
+    .services-grid { gap: 18px; }
+}
+
+@media (max-width: 480px) {
+    .services-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,79 @@
+/* ===================================================================
+   SOS LOCAL — POLÍTICAS E TERMOS (legal.html)
+   #content-area e h1 já vêm de estilo.css.
+=================================================================== */
+
+/* Indicador visual de página informativa/secundária */
+.legal-notice {
+    background: #f0f4f8;
+    border-left: 4px solid var(--cor-secundaria);
+    padding: 12px 16px;
+    border-radius: var(--raio-sm);
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 28px;
+}
+
+.legal-block {
+    margin-bottom: 36px;
+    text-align: left; /* corrigido: era justify — causa espaçamento irregular em mobile */
+}
+
+.legal-block:last-child {
+    margin-bottom: 0;
+}
+
+.legal-block h2 {
+    color: var(--cor-secundaria);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--cor-primaria);
+}
+
+.legal-block h3 {
+    color: var(--cor-secundaria);
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+.legal-block p {
+    color: var(--cor-texto-suave);
+    line-height: 1.75;
+}
+
+.legal-block ul {
+    margin-left: 22px;
+    margin-top: 10px;
+}
+
+.legal-block li {
+    margin-bottom: 10px;
+    color: var(--cor-texto-suave);
+    line-height: 1.7;
+}
+
+.legal-block li strong {
+    color: var(--cor-texto);
+}
+
+/* Ligações dentro do texto (ex.: link para "Contactos" no bloco 3)
+   — sem esta regra o link herdava a cor cinzenta do parágrafo e
+   ficava praticamente impercetível como link. */
+.legal-block a,
+.legal-notice a {
+    color: var(--cor-secundaria);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.legal-block a:hover,
+.legal-notice a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Padding responsivo de #content-area já uniformizado em estilo.css */

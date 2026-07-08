@@ -1,0 +1,478 @@
+/* ===================================================================
+   SOS LOCAL — ESTILO GLOBAL
+   Variáveis, reset, header, nav, footer e estados partilhados
+   por todas as páginas da plataforma.
+=================================================================== */
+
+:root {
+    --cor-primaria: #D62828;
+    --cor-primaria-escura: #B11F1F;
+    --cor-secundaria: #1D3557;
+    --cor-secundaria-escura: #15273F;
+    --cor-destaque: #FFD166;
+    --cor-fundo: #F8F9FA;
+    --cor-texto: #212529;
+    --cor-texto-suave: #495057;
+    --cor-branca: #FFFFFF;
+    --cor-borda: #DEE2E6;
+
+    --sombra-sm: 0 1px 3px rgba(33, 37, 41, 0.08);
+    --sombra-md: 0 4px 12px rgba(33, 37, 41, 0.08);
+    --sombra-lg: 0 10px 24px rgba(33, 37, 41, 0.12);
+
+    --raio-sm: 6px;
+    --raio-md: 10px;
+    --raio-lg: 14px;
+
+    --espaco-card: 32px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.65;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* ---------------------------------------------------------
+   HEADER
+--------------------------------------------------------- */
+#site-header {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--cor-primaria);
+    box-shadow: var(--sombra-sm);
+    min-height: 64px;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    padding: 14px 0;
+}
+
+.logo strong { color: var(--cor-destaque); }
+
+/* ---------------------------------------------------------
+   NAVEGAÇÃO PRINCIPAL
+--------------------------------------------------------- */
+#top-navigation ul {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+    align-items: center;
+}
+
+#top-navigation a {
+    color: var(--cor-branca);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 8px 14px;
+    border-radius: var(--raio-sm);
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+#top-navigation a:hover {
+    color: var(--cor-destaque);
+    background-color: rgba(255,255,255,0.08);
+}
+
+/* Página ativa */
+#top-navigation a.nav-ativo {
+    background-color: var(--cor-destaque);
+    color: var(--cor-secundaria);
+    border-bottom-color: transparent;
+}
+
+#top-navigation a.nav-ativo:hover {
+    background-color: #f5c840;
+    color: var(--cor-secundaria);
+}
+
+/* ---------------------------------------------------------
+   HAMBÚRGUER (mobile)
+--------------------------------------------------------- */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: var(--raio-sm);
+    color: var(--cor-branca);
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    line-height: 1;
+    transition: border-color 0.2s;
+}
+
+#menu-toggle:hover { border-color: var(--cor-destaque); color: var(--cor-destaque); }
+
+/* ---------------------------------------------------------
+   LAYOUT PRINCIPAL (sem sidebar)
+--------------------------------------------------------- */
+#main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+    width: 100%;
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+#site-footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    padding: 48px 5% 24px;
+    margin-top: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col h4 {
+    margin-bottom: 16px;
+    color: var(--cor-destaque);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-col ul { list-style: none; }
+
+.footer-col a {
+    color: #C9D2DE;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-col p {
+    color: #C9D2DE;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-col a:hover { color: var(--cor-branca); }
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 20px;
+    margin-top: 32px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #AEB9C7;
+}
+
+/* ---------------------------------------------------------
+   ÁREA DE CONTEÚDO
+   Padding apenas horizontal; cards internos gerem o seu próprio espaço
+--------------------------------------------------------- */
+#content-area {
+    background: var(--cor-branca);
+    border-radius: var(--raio-md);
+    border: 1px solid var(--cor-borda);
+    box-shadow: var(--sombra-md);
+    padding: var(--espaco-card);
+}
+
+#content-area h1 {
+    color: var(--cor-secundaria);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid var(--cor-primaria);
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#content-area > p {
+    font-size: 1.05rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 28px;
+    max-width: 720px;
+}
+
+/* Em desktop, o parágrafo de introdução (imediatamente a seguir ao
+   título) acompanha o h1 centrado, evitando o efeito de texto "preso"
+   à esquerda com espaço vazio ao lado. Caixas de aviso (.visitor-notice,
+   .legal-notice) mantêm o alinhamento à esquerda, pois têm um estilo
+   próprio de destaque com borda lateral. */
+@media (min-width: 769px) {
+    #content-area > h1 + p:not(.visitor-notice):not(.legal-notice) {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+/* Hierarquia única de H2 em toda a plataforma — qualquer página que
+   precise de um tratamento diferente (ex.: secção de emergência em
+   contato.html) define um override explícito por cima desta base. */
+#content-area h2 {
+    color: var(--cor-secundaria);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--cor-primaria);
+}
+
+/* ---------------------------------------------------------
+   BOTÕES
+--------------------------------------------------------- */
+.emergency-btn {
+    display: block;
+    background: var(--cor-primaria);
+    color: var(--cor-branca);
+    text-align: center;
+    padding: 22px 18px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    border-radius: var(--raio-md);
+    margin: 20px 0 8px;
+    box-shadow: 0 4px 16px rgba(214, 40, 40, 0.35);
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    border: 3px solid var(--cor-primaria-escura);
+}
+
+.emergency-btn::before {
+    content: "📞 ";
+}
+
+.emergency-btn:hover {
+    background: var(--cor-primaria-escura);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(214, 40, 40, 0.45);
+}
+
+.btn-small {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: 9px 18px;
+    text-decoration: none;
+    border-radius: var(--raio-sm);
+    font-size: 0.88rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.btn-small:hover { background-color: var(--cor-primaria-escura); }
+
+.submit-btn {
+    background: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: 15px;
+    border: none;
+    border-radius: var(--raio-sm);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover { background: var(--cor-primaria-escura); }
+
+/* ---------------------------------------------------------
+   RESPONSIVIDADE
+--------------------------------------------------------- */
+@media (max-width: 900px) {
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    #site-header {
+        flex-wrap: wrap;
+        padding: 0 5%;
+    }
+
+    .logo { padding: 14px 0; }
+
+    #menu-toggle {
+        display: block;
+        margin: 14px 0;
+    }
+
+    /* Estado fechado por padrão em mobile (sem JS, fallback visual) */
+    #top-navigation {
+        width: 100%;
+        display: none;
+    }
+
+    /* O jQuery controla a abertura via slideDown/slideUp; a classe
+       "aberto" garante que o menu aparece mesmo antes da animação
+       terminar, e serve de âncora de estado para o script. */
+    #top-navigation.aberto {
+        display: block;
+    }
+
+    #top-navigation ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0 16px;
+        border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    #top-navigation li { width: 100%; }
+
+    #top-navigation a {
+        padding: 12px 8px;
+        font-size: 0.95rem;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        justify-content: flex-start;
+    }
+
+    #top-navigation a.nav-ativo {
+        border-left: 4px solid var(--cor-secundaria);
+        padding-left: 12px;
+    }
+
+    #main-container { margin: 24px auto; padding: 0 14px; }
+
+    #content-area { padding: 24px; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* ===================================================================
+   COMPONENTE: BOTÃO "VOLTAR AO TOPO"
+   Posicionado no canto inferior direito, oculto por padrão.
+   Controlado via jQuery (voltar-topo.js) com fadeIn / fadeOut.
+=================================================================== */
+
+#voltar-topo {
+    /* Posicionamento fixo — não interfere com o fluxo da página */
+    position: fixed;
+    bottom: 28px;
+    right: 24px;
+    z-index: 9990;
+
+    /* Aparência */
+    display: none;          /* oculto por padrão; jQuery controla via fadeIn/fadeOut */
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    /* Cor e sombra */
+    background-color: var(--cor-primaria);           /* #D62828 */
+    box-shadow: 0 4px 14px rgba(214, 40, 40, 0.40);
+
+    /* Transição suave para hover/focus */
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Ícone SVG centrado */
+#voltar-topo svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    stroke: #ffffff;
+    stroke-width: 2.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+/* Hover discreto */
+#voltar-topo:hover {
+    background-color: var(--cor-primaria-escura);    /* #B11F1F */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(214, 40, 40, 0.50);
+}
+
+/* Focus visível (acessibilidade teclado) */
+#voltar-topo:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 3px;
+}
+
+/* Ajuste em mobile: margem menor para não cobrir o menu */
+@media (max-width: 768px) {
+    #voltar-topo {
+        bottom: 20px;
+        right: 16px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* ===================================================================
+   DARK MODE — OVERRIDE DE VARIÁVEIS GLOBAIS
+   Activado pela classe data-tema="escuro" no elemento <html>.
+   Nenhuma regra de layout ou componente é duplicada: basta
+   redefinir aqui as variáveis que mudam; toda a UI adapta-se.
+=================================================================== */
+:root[data-tema="escuro"] {
+
+    /* Fundos e superfícies */
+    --cor-fundo:    #0F1117;   /* fundo da página */
+    --cor-branca:   #1A1D27;   /* cards, inputs, content-area */
+
+    /* Texto */
+    --cor-texto:        #E8ECF0;
+    --cor-texto-suave:  #9AA5B4;
+
+    /* Bordas */
+    --cor-borda: #2D3340;
+
+    /* Secundária (header, footer, títulos) — ligeiramente mais clara
+       para manter contraste suficiente sobre fundo escuro */
+    --cor-secundaria:        #2C4A73;
+    --cor-secundaria-escura: #1D3557;
+
+    /* Sombras — mais escuras para dar profundidade no dark */
+    --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+    --sombra-md: 0 4px 12px rgba(0, 0, 0, 0.40);
+    --sombra-lg: 0 10px 24px rgba(0, 0, 0, 0.55);
+
+    /* Primária e destaque: mantêm-se inalterados */
+    /* --cor-primaria, --cor-primaria-escura, --cor-destaque: sem alteração */
+}

@@ -1,0 +1,243 @@
+/* ===================================================================
+   SOS LOCAL — DARK MODE: OVERRIDES DE CORES HARDCODED
+   Este ficheiro cobre os valores que não usam variáveis CSS
+   nos ficheiros existentes, evitando qualquer alteração nos
+   CSS originais. Activado por [data-tema="escuro"] no <html>.
+=================================================================== */
+
+/* ---------------------------------------------------------
+   BOTÃO DE ALTERNÂNCIA
+   Injectado por dark-mode.js no header existente.
+   Posicionado entre o hambúrguer e o menu de navegação.
+--------------------------------------------------------- */
+#btn-dark-mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: auto;
+    height: 38px;
+    padding: 0 14px;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--raio-sm);
+    color: var(--cor-branca);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    order: 2;   /* entre logo (0) e menu (3) em desktop */
+}
+
+#btn-dark-mode .btn-dark-mode__label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#btn-dark-mode:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: var(--cor-destaque);
+    transform: scale(1.08);
+}
+
+#btn-dark-mode:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+#btn-dark-mode svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+/* Em mobile, o botão aparece ao lado do hambúrguer */
+@media (max-width: 768px) {
+    #btn-dark-mode {
+        margin: 14px 0;
+        order: 1;
+    }
+}
+
+/* Em ecrãs muito estreitos, mantém só o ícone para não apertar o header */
+@media (max-width: 380px) {
+    #btn-dark-mode {
+        padding: 0;
+        width: 38px;
+    }
+    #btn-dark-mode .btn-dark-mode__label {
+        display: none;
+    }
+}
+
+/* ---------------------------------------------------------
+   TRANSIÇÃO GLOBAL SUAVE AO MUDAR DE TEMA
+   Aplicada ao body para que fundos, textos e bordas animem.
+   Desativada via classe .sem-transicao durante a inicialização
+   (evita flash ao carregar a página).
+--------------------------------------------------------- */
+body.tema-transicao,
+body.tema-transicao *,
+body.tema-transicao *::before,
+body.tema-transicao *::after {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease !important;
+}
+
+/* =================================================================
+   OVERRIDES ESPECÍFICOS — cores hardcoded nos CSS existentes
+   (valores que não usam var(--...) e precisam de override manual)
+================================================================= */
+
+/* ----- estilo.css: nav-ativo em mobile usa --cor-secundaria hardcoded ----- */
+[data-tema="escuro"] #top-navigation a.nav-ativo {
+    color: #0F1117;  /* contraste sobre destaque amarelo */
+}
+
+/* ----- index.css / servicos.css: .visitor-notice (background #f0f4f8) ----- */
+[data-tema="escuro"] .visitor-notice,
+[data-tema="escuro"] .legal-notice {
+    background: #1E2232;
+    border-left-color: var(--cor-secundaria);
+    color: var(--cor-texto-suave);
+}
+
+/* ----- contato.css: .contact-block--emergency (background #FFF8F8) --------- */
+[data-tema="escuro"] .contact-block--emergency,
+[data-tema="escuro"] .service-detail-card--emergency {
+    background: #1F1418;
+    border-color: var(--cor-primaria);
+}
+
+/* ----- contato.css: .contact-block (background var(--cor-branca)) ---------- */
+[data-tema="escuro"] .contact-block {
+    background: var(--cor-branca);
+    border-color: var(--cor-borda);
+}
+
+/* ----- contato.css: inputs — placeholder e background --------------------- */
+[data-tema="escuro"] #contact-form input,
+[data-tema="escuro"] #contact-form textarea,
+[data-tema="escuro"] #contact-form select {
+    background: #13161E;
+    border-color: var(--cor-borda);
+    color: var(--cor-texto);
+}
+
+[data-tema="escuro"] #contact-form input::placeholder,
+[data-tema="escuro"] #contact-form textarea::placeholder {
+    color: #5C6570;
+}
+
+[data-tema="escuro"] #contact-form input.campo-invalido,
+[data-tema="escuro"] #contact-form textarea.campo-invalido {
+    background-color: #1F1418;
+}
+
+/* ----- contato.css: .form-success (#e6f6f1 / #1b7a5c) --------------------- */
+[data-tema="escuro"] .form-success {
+    background-color: #0D2018;
+    color: #4ADE80;
+}
+
+/* ----- detalhes.css: .pharmacy-status badges ------------------------------ */
+[data-tema="escuro"] .pharmacy-status--24h {
+    background-color: #0D2018;
+    color: #4ADE80;
+}
+
+[data-tema="escuro"] .pharmacy-status--limitado {
+    background-color: #1F1A0A;
+    color: #F5C542;
+}
+
+/* ----- detalhes.css: .pharmacy-card (background var(--cor-branca)) --------- */
+[data-tema="escuro"] .pharmacy-card {
+    background: var(--cor-branca);
+}
+
+/* ----- index.css / servicos.css: .service-card (background var(--cor-branca)) */
+[data-tema="escuro"] .service-card {
+    background: var(--cor-branca);
+}
+
+/* ----- faq.css: .faq-item (background var(--cor-fundo)) -------------------- */
+[data-tema="escuro"] .faq-item {
+    background: #13161E;
+}
+
+/* ----- ajuda.css: .blog-post (background var(--cor-fundo)) ----------------- */
+[data-tema="escuro"] .blog-post {
+    background: #13161E;
+}
+
+/* ----- contato.css / detalhes.css: .info-item (background var(--cor-fundo)) */
+[data-tema="escuro"] .info-item {
+    background: #13161E;
+}
+
+/* ----- mapa.css: sublinks do sitemap (background var(--cor-fundo)) --------- */
+[data-tema="escuro"] .sitemap-tree ul ul a {
+    background: #13161E;
+    color: var(--cor-texto);
+}
+
+/* ----- estilo.css: h1 em #content-area usa --cor-secundaria ---------------- */
+[data-tema="escuro"] #content-area h1,
+[data-tema="escuro"] #content-area h2,
+[data-tema="escuro"] .section-title,
+[data-tema="escuro"] .faq-category h2,
+[data-tema="escuro"] .legal-block h2,
+[data-tema="escuro"] .legal-block h3,
+[data-tema="escuro"] .block-title,
+[data-tema="escuro"] .service-detail-card h2,
+[data-tema="escuro"] .service-card h3,
+[data-tema="escuro"] .blog-post h3,
+[data-tema="escuro"] .pharmacy-card h3,
+[data-tema="escuro"] .emergency-card h3,
+[data-tema="escuro"] .info-value,
+[data-tema="escuro"] .procedure-list li strong {
+    color: #A8C4E0;  /* azul acinzentado — legível sobre fundo escuro */
+}
+
+/* Títulos de emergência mantêm vermelho */
+[data-tema="escuro"] .block-title--emergency,
+[data-tema="escuro"] .service-detail-card--emergency h2 {
+    color: var(--cor-primaria);
+}
+
+/* ----- Footer: links hardcoded #C9D2DE / #AEB9C7 -------------------------- */
+[data-tema="escuro"] .footer-col a,
+[data-tema="escuro"] .footer-col p {
+    color: #7A8FA6;
+}
+
+[data-tema="escuro"] .footer-col a:hover {
+    color: var(--cor-branca);
+}
+
+[data-tema="escuro"] .footer-bottom p {
+    color: #5C6E82;
+}
+
+/* -----------------------------------------------------------------
+   DARK MODE: MAPA GOOGLE MAPS (EMBED)
+   O iframe do Google Maps não tem um "modo escuro" nativo no embed
+   sem chave de API, por isso aplica-se um leve ajuste de brilho/
+   contraste para que o branco do mapa não contraste tanto com o
+   resto da página em tema escuro.
+----------------------------------------------------------------- */
+[data-tema="escuro"] .map-placeholder.mapa-ativo iframe {
+    filter: brightness(0.88) contrast(0.95);
+}
+

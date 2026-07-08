@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro de ajuda do SOS Local: guia de sobrevivência, primeiros socorros, plano de emergência familiar e informações sobre a plataforma.">
+    <link rel="icon" href="../img/icons/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="../img/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/apple-touch-icon.png">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#D62828">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SOS Local">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:title" content="SOS Local | Centro de Ajuda">
+    <meta property="og:description" content="Centro de ajuda do SOS Local: guia de sobrevivência, primeiros socorros, plano de emergência familiar e informações sobre a plataforma.">
+    <meta property="og:image" content="https://soslocal.ao/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://soslocal.ao/html/ajuda.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SOS Local | Centro de Ajuda">
+    <meta name="twitter:description" content="Centro de ajuda do SOS Local: guia de sobrevivência, primeiros socorros, plano de emergência familiar e informações sobre a plataforma.">
+    <meta name="twitter:image" content="https://soslocal.ao/img/og-image.png">
+    <link rel="canonical" href="https://soslocal.ao/html/ajuda.html">
+    <title>SOS Local | Centro de Ajuda</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/ajuda.css">
+    <link rel="stylesheet" href="../css/carrossel.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/cookies.css">
+    <script>/* SOS LOCAL: anti-flash tema */
+    (function(){var t=localStorage.getItem('sos-tema')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'escuro':'claro');if(t==='escuro')document.documentElement.setAttribute('data-tema','escuro');}());
+    </script>
+</head>
+<body>
+    <header id="site-header">
+        <div class="logo"><strong>SOS</strong> LOCAL</div>
+        <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+        <nav id="top-navigation">
+            <ul>
+                <li><a href="../index.html">&#127968; Início</a></li>
+                <li><a href="servicos.html">&#128680; Emergências</a></li>
+                <li><a href="ajuda.html" class="nav-ativo">&#128218; Centro de Ajuda</a></li>
+                <li><a href="faq.html">&#10067; FAQ</a></li>
+                <li><a href="contato.html">&#128222; Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-container">
+        <section id="content-area">
+            <h1>Centro de Ajuda</h1>
+            <p class="page-subtitle">Sobre o SOS Local e Guias de Segurança</p>
+
+            <h2 class="section-title">Guia de Sobrevivência</h2>
+            <p class="section-subtitle">Conhecimento é a sua melhor ferramenta de prevenção.</p>
+
+            <!-- Grid original — visível em desktop (≥ 769px) -->
+            <div class="guide-grid">
+                <article class="blog-post">
+                    <span class="blog-post-number" aria-hidden="true">1</span>
+                    <h3>Plano de Emergência Familiar em Zonas Urbanas</h3>
+                    <p>Um plano de emergência não é apenas para grandes catástrofes. Em Luanda, por exemplo, é crucial ter um ponto de encontro definido fora de casa e um kit de emergência contendo cópias de documentos, água, lanternas e um rádio a pilhas.</p>
+                    <p class="blog-post-quote">"Quem se prepara, protege-se."</p>
+                </article>
+
+                <article class="blog-post">
+                    <span class="blog-post-number" aria-hidden="true">2</span>
+                    <h3>Primeiros Socorros: A "Regra de Ouro"</h3>
+                    <p>Ao chegar a um local de acidente, a regra fundamental é <strong>Proteger, Alertar e Socorrer</strong>:</p>
+                    <ol class="golden-rule-list">
+                        <li>Proteger-se a si e à vítima de riscos secundários.</li>
+                        <li>Alertar os serviços de socorro através do 113, 112 ou 115.</li>
+                        <li>Só então prestar assistência básica, como manter a vítima imóvel em caso de suspeita de trauma.</li>
+                    </ol>
+                </article>
+
+                <article class="blog-post">
+                    <span class="blog-post-number" aria-hidden="true">3</span>
+                    <h3>Procedimentos em caso de Inundações</h3>
+                    <p>Durante a época das chuvas, evite áreas baixas. Se a água subir, desconecte a energia elétrica imediatamente. Nunca tente atravessar correntes de água a pé ou de viatura, pois a força da corrente pode ser enganadora. Se estiver em casa, suba para um local elevado e aguarde a indicação dos Bombeiros (115).</p>
+                </article>
+            </div>
+
+            <!--
+                CARROSSEL — visível apenas em mobile (≤ 768px).
+                O CSS esconde este bloco em desktop via media query,
+                sem qualquer overhead de JS em ecrãs largos.
+            -->
+            <div
+                class="carrossel-wrapper"
+                role="region"
+                aria-label="Guia de Sobrevivência — navegue entre os artigos"
+            >
+                <!-- Anúncio para leitores de ecrã (aria-live) -->
+                <div class="carrossel-anuncio" aria-live="polite" aria-atomic="true"></div>
+
+                <!-- Botão: slide anterior -->
+                <button
+                    class="carrossel-btn carrossel-btn--anterior"
+                    aria-label="Artigo anterior"
+                    disabled
+                >&#8592;</button>
+
+                <!-- Faixa deslizante com os slides -->
+                <div class="carrossel-faixa" aria-atomic="false">
+
+                    <article class="blog-post">
+                        <span class="blog-post-number" aria-hidden="true">1</span>
+                        <h3>Plano de Emergência Familiar em Zonas Urbanas</h3>
+                        <p>Um plano de emergência não é apenas para grandes catástrofes. Em Luanda, por exemplo, é crucial ter um ponto de encontro definido fora de casa e um kit de emergência contendo cópias de documentos, água, lanternas e um rádio a pilhas.</p>
+                        <p class="blog-post-quote">"Quem se prepara, protege-se."</p>
+                    </article>
+
+                    <article class="blog-post">
+                        <span class="blog-post-number" aria-hidden="true">2</span>
+                        <h3>Primeiros Socorros: A "Regra de Ouro"</h3>
+                        <p>Ao chegar a um local de acidente, a regra fundamental é <strong>Proteger, Alertar e Socorrer</strong>:</p>
+                        <ol class="golden-rule-list">
+                            <li>Proteger-se a si e à vítima de riscos secundários.</li>
+                            <li>Alertar os serviços de socorro através do 113, 112 ou 115.</li>
+                            <li>Só então prestar assistência básica, como manter a vítima imóvel em caso de suspeita de trauma.</li>
+                        </ol>
+                    </article>
+
+                    <article class="blog-post">
+                        <span class="blog-post-number" aria-hidden="true">3</span>
+                        <h3>Procedimentos em caso de Inundações</h3>
+                        <p>Durante a época das chuvas, evite áreas baixas. Se a água subir, desconecte a energia elétrica imediatamente. Nunca tente atravessar correntes de água a pé ou de viatura, pois a força da corrente pode ser enganadora. Se estiver em casa, suba para um local elevado e aguarde a indicação dos Bombeiros (115).</p>
+                    </article>
+
+                </div><!-- /carrossel-faixa -->
+
+                <!-- Botão: slide seguinte -->
+                <button
+                    class="carrossel-btn carrossel-btn--proximo"
+                    aria-label="Próximo artigo"
+                >&#8594;</button>
+
+                <!-- Indicadores de paginação -->
+                <div class="carrossel-indicadores" role="tablist" aria-label="Selecionar artigo">
+                    <button
+                        class="carrossel-ponto"
+                        role="tab"
+                        data-indice="0"
+                        aria-current="true"
+                        aria-label="Artigo 1: Plano de Emergência Familiar"
+                    ></button>
+                    <button
+                        class="carrossel-ponto"
+                        role="tab"
+                        data-indice="1"
+                        aria-current="false"
+                        aria-label="Artigo 2: Primeiros Socorros"
+                    ></button>
+                    <button
+                        class="carrossel-ponto"
+                        role="tab"
+                        data-indice="2"
+                        aria-current="false"
+                        aria-label="Artigo 3: Procedimentos em caso de Inundações"
+                    ></button>
+                </div>
+
+            </div><!-- /carrossel-wrapper -->
+
+            <hr class="section-divider">
+
+            <h2 class="section-title">Sobre o SOS Local</h2>
+            <article class="content-block">
+                <p>O <strong>SOS Local</strong> nasceu da necessidade de colmatar uma falha crítica na resposta às emergências em território angolano: a dispersão e dificuldade de acesso a contactos fundamentais em momentos de crise. Somos uma plataforma de utilidade pública focada na inclusão digital e na eficiência operacional.</p>
+                <p>A nossa missão é servir de ponte direta entre o cidadão e as autoridades. Não somos uma entidade de socorro, mas somos a chave que encurta a distância entre quem precisa de ajuda e quem tem o dever de a prestar. Acreditamos que a informação organizada é a primeira linha de defesa contra o caos em situações de emergência.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer id="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col"><h4>Institucional</h4><ul><li><a href="ajuda.html">Centro de Ajuda</a></li><li><a href="legal.html">Termos de Uso</a></li></ul></div>
+            <div class="footer-col"><h4>Serviços</h4><ul><li><a href="policia.html">Polícia</a></li><li><a href="saude.html">Saúde</a></li><li><a href="bombeiros.html">Bombeiros</a></li><li><a href="farmacias.html">Farmácias</a></li></ul></div>
+            <div class="footer-col"><h4>Suporte</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="mapa-site.html">Mapa do Site</a></li><li><a href="contato.html">Contactos</a></li></ul></div>
+            <div class="footer-col"><h4>Redes Sociais</h4><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 SOS Local — Segurança e Cidadania.</p></div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/voltar-topo.js"></script>
+    <script src="../js/dark-mode.js"></script>
+    <script src="../js/cookies.js"></script>
+    <script src="../js/carrossel.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('../sw.js').catch(function (erro) {
+                console.warn('SOS Local: falha ao registar o service worker.', erro);
+            });
+        });
+    }
+    </script>
+</body>
+</html>

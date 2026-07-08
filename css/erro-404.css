@@ -1,0 +1,176 @@
+/* ===================================================================
+   SOS LOCAL — PÁGINA DE ERRO 404 (404.html)
+   #content-area, h1 e as variáveis globais já vêm de estilo.css.
+   Reutiliza o mesmo sistema de cores, sombras e cartões do resto
+   do site — nenhum valor novo é introduzido aqui.
+=================================================================== */
+
+.erro-404 {
+    text-align: center;
+    padding: 24px 0 8px;
+}
+
+.erro-404 .codigo-erro {
+    font-size: 6.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--cor-primaria);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-shadow: 0 4px 18px rgba(214, 40, 40, 0.20);
+}
+
+.erro-404 .icone-sirene {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 10px;
+    animation: erro-404-pulsar 1.8s ease-in-out infinite;
+}
+
+@keyframes erro-404-pulsar {
+    0%, 100% { transform: scale(1);   opacity: 1;   }
+    50%      { transform: scale(1.12); opacity: 0.75; }
+}
+
+.erro-404 h2 {
+    color: var(--cor-secundaria);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.erro-404 p {
+    color: var(--cor-texto-suave);
+    font-size: 1.02rem;
+    max-width: 520px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+}
+
+/* ---------------------------------------------------------
+   AÇÕES PRINCIPAIS
+--------------------------------------------------------- */
+.erro-404-acoes {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.erro-404-acoes .emergency-btn {
+    display: inline-block;
+    margin: 0;
+    font-size: 1.05rem;
+    padding: 16px 28px;
+}
+
+.erro-404-acoes .emergency-btn::before {
+    content: "🏠 ";
+}
+
+.erro-404-btn-secundario {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--cor-branca);
+    color: var(--cor-secundaria);
+    border: 2px solid var(--cor-borda);
+    padding: 14px 26px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--raio-md);
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.erro-404-btn-secundario:hover {
+    border-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   ATALHOS RÁPIDOS DE EMERGÊNCIA
+   Reforça o propósito do site mesmo numa página de erro:
+   os números de emergência continuam a um clique.
+--------------------------------------------------------- */
+.erro-404-emergencias {
+    border-top: 1px solid var(--cor-borda);
+    padding-top: 28px;
+    margin-top: 8px;
+}
+
+.erro-404-emergencias h3 {
+    color: var(--cor-secundaria);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 16px;
+}
+
+.erro-404-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.erro-404-grid a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-md);
+    padding: 16px 10px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.erro-404-grid a:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-sm);
+}
+
+.erro-404-grid .emoji {
+    font-size: 1.6rem;
+}
+
+/* ---------------------------------------------------------
+   LINK PARA O MAPA DO SITE
+--------------------------------------------------------- */
+.erro-404-mapa-site {
+    margin-top: 24px;
+    font-size: 0.92rem;
+    color: var(--cor-texto-suave);
+}
+
+.erro-404-mapa-site a {
+    color: var(--cor-secundaria);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.erro-404-mapa-site a:hover { color: var(--cor-primaria); }
+
+/* ---------------------------------------------------------
+   RESPONSIVIDADE
+--------------------------------------------------------- */
+@media (max-width: 768px) {
+    .erro-404 .codigo-erro { font-size: 4.2rem; }
+    .erro-404-grid { grid-template-columns: repeat(2, 1fr); }
+    .erro-404-acoes { flex-direction: column; align-items: stretch; }
+    .erro-404-acoes .emergency-btn,
+    .erro-404-btn-secundario { text-align: center; justify-content: center; }
+}

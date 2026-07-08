@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# O mapa do site interativo (html/mapa-site.html) é uma página de
+# navegação pensada para humanos, não para indexação — mantém-se
+# fora do sitemap.xml, mas não é bloqueada aqui para não impedir
+# o acesso caso alguém a encontre por outro caminho.
+
+Sitemap: https://soslocal.ao/sitemap.xml

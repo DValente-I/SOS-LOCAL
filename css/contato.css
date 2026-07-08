@@ -1,0 +1,310 @@
+/* ===================================================================
+   SOS LOCAL — CONTACTOS (contato.html)
+   #content-area e h1 já vêm de estilo.css.
+   Botões reutilizáveis .btn-primary / .btn-secondary definidos aqui
+   e disponíveis para reutilização noutras páginas do projeto.
+=================================================================== */
+
+/* ---------------------------------------------------------
+   BOTÕES PADRÃO REUTILIZÁVEIS
+   .btn-primary   -> ações urgentes/críticas (vermelho)
+   .btn-secondary -> ações institucionais/secundárias (azul escuro)
+   Hover comum: amarelo suave, conforme identidade do projeto.
+--------------------------------------------------------- */
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: var(--raio-sm);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+}
+
+.btn-secondary {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-secundaria);
+    transform: translateY(-2px);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* ---------------------------------------------------------
+   INTRODUÇÃO DA PÁGINA
+--------------------------------------------------------- */
+.page-intro {
+    font-size: 1.05rem;
+    color: var(--cor-texto-suave);
+    max-width: 720px;
+    margin-bottom: 28px;
+}
+
+/* ---------------------------------------------------------
+   BLOCOS / SECÇÕES (Emergência, Institucional, Formulário)
+   Cada secção é um bloco visualmente agrupado e espaçado
+   de forma regular, criando hierarquia clara entre si.
+--------------------------------------------------------- */
+.contact-block {
+    background: var(--cor-branca);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-md);
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--sombra-sm);
+}
+
+.contact-block:last-child {
+    margin-bottom: 0;
+}
+
+.block-title {
+    color: var(--cor-secundaria);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.block-subtitle {
+    font-size: 0.96rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 20px;
+}
+
+/* Secção de emergência recebe destaque máximo: maior peso
+   visual do título e moldura de alerta, para ser identificada
+   de imediato por quem está em situação de urgência. */
+.contact-block--emergency {
+    border: 2px solid var(--cor-primaria);
+    background: #FFF8F8;
+}
+
+.block-title--emergency {
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+}
+
+/* ---------------------------------------------------------
+   CARTÕES DE EMERGÊNCIA
+--------------------------------------------------------- */
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.emergency-card {
+    background: var(--cor-branca);
+    border: 1px solid var(--cor-borda);
+    border-top: 4px solid var(--cor-primaria);
+    border-radius: var(--raio-md);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--sombra-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.emergency-card h3 {
+    color: var(--cor-secundaria);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.emergency-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--cor-primaria);
+    line-height: 1;
+}
+
+.emergency-card .btn-primary {
+    margin-top: 6px;
+}
+
+/* ---------------------------------------------------------
+   INFORMAÇÕES INSTITUCIONAIS
+--------------------------------------------------------- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-sm);
+}
+
+.info-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--cor-texto-suave);
+    margin-bottom: 4px;
+}
+
+.info-value {
+    display: block;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+a.info-value:hover {
+    text-decoration: underline;
+}
+
+.academic-note {
+    font-size: 0.88rem;
+    color: var(--cor-texto-suave);
+    font-style: italic;
+    border-left: 3px solid var(--cor-destaque);
+    padding-left: 14px;
+}
+
+/* ---------------------------------------------------------
+   FORMULÁRIO
+--------------------------------------------------------- */
+#contact-form {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+#contact-form label {
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    margin-bottom: 6px;
+    display: block;
+}
+
+#contact-form input,
+#contact-form textarea,
+#contact-form select {
+    margin-bottom: 20px;
+    padding: 12px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-sm);
+    width: 100%;
+    font-size: 0.98rem;
+    color: var(--cor-texto);
+    background: var(--cor-branca);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus,
+#contact-form select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.15);
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: #9CA3AF;
+}
+
+/* ---------------------------------------------------------
+   VALIDAÇÃO DO FORMULÁRIO
+   Reaproveita exclusivamente as cores já definidas em :root
+   (estilo.css) — nenhuma cor nova é introduzida.
+--------------------------------------------------------- */
+
+/* Campo com erro: borda e sombra de foco em vermelho (cor-primaria),
+   já usada no projeto para ações/estados críticos. */
+#contact-form input.campo-invalido,
+#contact-form textarea.campo-invalido {
+    border-color: var(--cor-primaria);
+    background-color: #FFF8F8;
+}
+
+#contact-form input.campo-invalido:focus,
+#contact-form textarea.campo-invalido:focus {
+    box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.2);
+}
+
+/* Mensagem de erro, apresentada imediatamente junto ao campo */
+.form-error {
+    display: block;
+    min-height: 18px;
+    margin: -14px 0 14px;
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.form-error:empty {
+    margin: 0;
+    min-height: 0;
+}
+
+/* Mensagem de sucesso após validação completa do formulário */
+.form-success {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border-radius: var(--raio-sm);
+    background-color: #e6f6f1;
+    color: #1b7a5c;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-success:empty {
+    display: none;
+}
+
+#contact-form .btn-secondary {
+    align-self: flex-start;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVIDADE
+--------------------------------------------------------- */
+@media (max-width: 768px) {
+    .contact-block { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+    .emergency-grid { grid-template-columns: 1fr; }
+    .info-grid { grid-template-columns: 1fr; }
+    #contact-form .btn-secondary,
+    .emergency-card .btn-primary {
+        width: 100%;
+    }
+}

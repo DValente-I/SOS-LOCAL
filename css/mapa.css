@@ -1,0 +1,67 @@
+/* ===================================================================
+   SOS LOCAL — MAPA DO SITE (mapa-site.html)
+   #content-area e h1 já vêm de estilo.css.
+=================================================================== */
+
+.sitemap-tree {
+    margin-top: 24px;
+}
+
+.sitemap-tree ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Nível 1 — páginas principais */
+.sitemap-tree > ul > li {
+    margin-bottom: 8px;
+}
+
+.sitemap-tree > ul > li > a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: var(--cor-secundaria);
+    color: var(--cor-branca);
+    text-decoration: none;
+    border-radius: var(--raio-sm);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.sitemap-tree > ul > li > a:hover {
+    background: var(--cor-secundaria-escura);
+}
+
+/* Nível 2 — subpáginas */
+.sitemap-tree ul ul {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    padding-left: 28px;
+    border-left: 3px solid var(--cor-destaque);
+}
+
+.sitemap-tree ul ul li {
+    margin-bottom: 4px;
+}
+
+.sitemap-tree ul ul a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    text-decoration: none;
+    border-radius: var(--raio-sm);
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.sitemap-tree ul ul a:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}

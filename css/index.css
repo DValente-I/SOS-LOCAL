@@ -1,0 +1,177 @@
+/* ===================================================================
+   SOS LOCAL — PÁGINA INICIAL (index.html)
+   #content-area, h1 e botões já vêm de estilo.css.
+=================================================================== */
+
+/* Nota discreta para visitantes/turistas que desconhecem o sistema
+   de emergência angolano. Mesmo padrão visual de .legal-notice
+   (legal.css), para manter consistência entre páginas. */
+.visitor-notice {
+    background: #f0f4f8;
+    border-left: 3px solid var(--cor-secundaria);
+    padding: 8px 12px;
+    border-radius: var(--raio-sm);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--cor-texto-suave);
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 8px;
+}
+
+/* Cores por serviço */
+.service-card[data-service="policia"] { border-top: 5px solid #1D3557; }
+.service-card[data-service="saude"]   { border-top: 5px solid #2a9d8f; }
+.service-card[data-service="bombeiros"] { border-top: 5px solid #D62828; }
+.service-card[data-service="farmacias"] { border-top: 5px solid #6a0dad; }
+
+.service-card {
+    background: var(--cor-branca);
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-md);
+    text-decoration: none;
+    color: var(--cor-texto);
+    box-shadow: var(--sombra-sm);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-lg);
+}
+
+.service-card[data-service="policia"]:hover  { border-color: #1D3557; }
+.service-card[data-service="saude"]:hover    { border-color: #2a9d8f; }
+.service-card[data-service="bombeiros"]:hover { border-color: #D62828; }
+.service-card[data-service="farmacias"]:hover { border-color: #6a0dad; }
+
+.service-icon {
+    font-size: 2.8rem;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.service-card h3 {
+    margin: 4px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+}
+
+.emergency-number {
+    display: block;
+    font-size: 2.4rem;
+    color: var(--cor-primaria);
+    font-weight: 800;
+    margin: 8px 0;
+}
+
+/* Farmácias não tem um número de emergência direto — o mesmo elemento
+   recebe aqui um tratamento tipográfico mais discreto (etiqueta em vez
+   de número gigante), evitando sugerir que "Ver Lista"/"Consultar"
+   seja um contacto de emergência como 113/112/115. */
+.service-card[data-service="farmacias"] .emergency-number {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #6a0dad;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: var(--cor-texto-suave);
+    margin-top: 8px;
+}
+
+/* ---------------------------------------------------------
+   VARIANTE COMPACTA (apenas na página inicial)
+   A home funciona como atalho rápido; a página de Serviços
+   mantém o cartão grande/detalhado original. Mesma paleta,
+   apenas mais compacta e horizontal — sem remover nenhum
+   serviço, número ou link.
+--------------------------------------------------------- */
+.services-grid--compact {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.service-card--compact {
+    padding: 18px 14px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 10px;
+    text-align: center;
+}
+
+.service-card--compact .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.service-card--compact h3 {
+    font-size: 1.05rem;
+    margin: 0;
+    width: 100%;
+}
+
+.service-card--compact .emergency-number {
+    font-size: 1.6rem;
+    margin: 2px 0;
+    width: 100%;
+}
+
+.service-card--compact[data-service="farmacias"] .emergency-number {
+    font-size: 0.92rem;
+}
+
+.service-card--compact p {
+    font-size: 0.82rem;
+    margin-top: 0;
+    width: 100%;
+}
+
+.services-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    color: var(--cor-secundaria);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.services-more-link:hover {
+    color: var(--cor-primaria);
+    border-bottom-color: var(--cor-primaria);
+}
+
+@media (max-width: 768px) {
+    .services-grid--compact { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 992px) {
+    .services-grid { gap: 18px; }
+}
+
+@media (max-width: 480px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .services-grid--compact { grid-template-columns: 1fr; }
+}

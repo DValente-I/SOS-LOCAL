@@ -1,0 +1,149 @@
+/* ===================================================================
+   SOS LOCAL — CARROSSEL DO GUIA DE SOBREVIVÊNCIA
+   Activo apenas em mobile (≤ 768px). Em desktop, o .guide-grid
+   original mantém-se intacto via grid normal (definido em ajuda.css).
+   Compatível com jQuery 3.7.1 · Sem dependências externas.
+=================================================================== */
+
+/* ------------------------------------------------------------------
+   CONTENTOR DO CARROSSEL
+   Em desktop: invisível — o .guide-grid de ajuda.css toma conta.
+   Em mobile: substitui o layout de grid por um slider horizontal.
+------------------------------------------------------------------ */
+.carrossel-wrapper {
+    display: none; /* escondido por defeito; activado via media query */
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--raio-md);
+    margin-bottom: 8px;
+    /* Garante que o swipe não cause scroll horizontal na página */
+    touch-action: pan-y;
+}
+
+.carrossel-faixa {
+    display: flex;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+    /* Fallback para quando JS não carregou ainda */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Cada slide ocupa 100% da largura do contentor */
+.carrossel-faixa .blog-post {
+    flex: 0 0 100%;
+    width: 100%;
+    /* Mantém o estilo visual do .blog-post definido em ajuda.css */
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------------
+   BOTÕES DE NAVEGAÇÃO (anterior / próximo)
+------------------------------------------------------------------ */
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: var(--cor-branca);
+    color: var(--cor-secundaria);
+    border: 2px solid var(--cor-borda);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--sombra-md);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    /* Área de toque confortável */
+    padding: 0;
+}
+
+.carrossel-btn:hover,
+.carrossel-btn:focus-visible {
+    background: var(--cor-secundaria);
+    color: var(--cor-branca);
+    border-color: var(--cor-secundaria);
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+.carrossel-btn--anterior { left: 8px; }
+.carrossel-btn--proximo  { right: 8px; }
+
+.carrossel-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------------
+   INDICADORES (pontos de paginação)
+------------------------------------------------------------------ */
+.carrossel-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 4px 0;
+}
+
+.carrossel-ponto {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--cor-borda);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+    /* Área de toque aumentada sem alterar visual */
+    position: relative;
+}
+
+.carrossel-ponto::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+}
+
+.carrossel-ponto[aria-current="true"] {
+    background: var(--cor-primaria);
+    transform: scale(1.3);
+}
+
+.carrossel-ponto:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------
+   ANÚNCIO PARA LEITORES DE ECRÃ (aria-live)
+------------------------------------------------------------------ */
+.carrossel-anuncio {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------
+   ACTIVAÇÃO EM MOBILE
+   Em ecrãs ≤ 768px: esconde o .guide-grid e mostra o carrossel.
+------------------------------------------------------------------ */
+@media (max-width: 768px) {
+    /* Esconde o grid original (sem o remover do DOM) */
+    .guide-grid { display: none; }
+
+    /* Mostra o contentor do carrossel */
+    .carrossel-wrapper { display: block; }
+}
+
+/* Em desktop: o .carrossel-wrapper está com display:none — nenhum
+   recurso extra é carregado além do CSS desta folha. */
